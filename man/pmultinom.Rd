@@ -35,8 +35,6 @@ Multinomial CDF
 i.e. If n balls are thrown into k bins, calculate
 P(x1<=q1, x2<=q2, ..., xk<=qk) where xi are numbers of balls in each bin, and
 qi are quantiles
-}
-\details{
 Uses an approximation described in: \cr
 Levin,  B.:  A  representation  for  multinomial  cumulative  distribution
 functions. Ann. Stat. 9, 1123–1126 (1981)
@@ -53,9 +51,9 @@ pmultinom(q = 2, n = 6, c(1/3, 1/3, 1/3))
 # Same as above, but with different probabilities for each bin
 pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5))
 
-# For 4 balls thrown into 2 bins, probability that the first bin has 1 or
-# fewer balls and the second bin has 4 or fewer
-pmultinom(q = c(1, 4), n = 4, c(0.5, 0.5))
+# For 4 balls randomly thrown into 2 bins, probability that the first bin has
+# 0 balls and the second bin has 4
+pmultinom(q = c(0, 4), n = 4, c(0.5, 0.5))
 }
 \seealso{
 \code{\link{dmultinom}}, \code{\link{pbinom}}
