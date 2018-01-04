@@ -18,7 +18,7 @@ double cdf_multinomial_lnP(const int K, const int N, Rcpp::NumericVector p,
     int k = 0;
     double gamma1 = 0.0, gamma2 = 0.0, sum_s2 = 0.0, sum_mu = 0.0, sp = 0.0,
            x = 0.0, x2 = 0.0, PWN = 0.0;
-    auto s = static_cast<double> (N);
+    double s = static_cast<double> (N);
     double log_cdf = -log(gsl_ran_poisson_pdf(N, s));
 
     /* This is the P(W=N) bit */
