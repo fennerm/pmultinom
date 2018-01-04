@@ -1,9 +1,9 @@
 # pmultinom
 
 You're probably here because you've noticed that the multinomial cumulative
-distribution function is absent from the core libraries. This package fills that
-gap. It's implemented in C++ for efficiency and syntax you're probably familiar
-with.
+distribution function is absent from the R core libraries. This package fills
+that gap. It's implemented in C++ for efficiency and syntax you're probably
+familiar with.
 
 ## Installation
 
@@ -20,8 +20,8 @@ system.
 Then from within R:
 
 ```
-   install.packages('devtools')
-   devtools::install_github('fennerm/pmultinom')
+  install.packages('devtools')
+  devtools::install_github('fennerm/pmultinom')
 ```
 
 ### MacOS
