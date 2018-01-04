@@ -1,10 +1,12 @@
 Package: pmultinom
 Title: Multinomial cumulative distribution function
-Version: 0.0.0.1
+Version: 1.0.0
 Authors@R: person("Fenner", "Macrae", email = "13209544+fennerm@users.noreply.github.com", role = c("aut", "cre"))
 Description: Multinomial cumulative distribution function
-License: MIT
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests: testthat
+LinkingTo: Rcpp, RcppGSL
+Imports: Rcpp, VGAM
