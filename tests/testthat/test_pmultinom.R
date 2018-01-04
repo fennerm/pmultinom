@@ -29,7 +29,11 @@ test_that("dens_func matches monte carlo expectations (lower.tail=FALSE))", {
 })
 
 test_that("Multiple quantiles handled correctly", {
-            q <- rep(c(3, 4), k / 2)
+            k <- 2
+            q <- c(0, 4)
+            prob <- rep(0.5, 2)
+            n <- 4
+            multinomials <- rmultinom(reps, n, prob)
             have_x_or_less <- which(apply(multinomials <= q, 2, all))
             p_monte_carlo <- (length(have_x_or_less) + 1) / (reps + 1)
             p <- pmultinom(q, n, prob)
