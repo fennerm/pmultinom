@@ -54,10 +54,6 @@ test_that("Different probabilities handled correctly", {
 })
 })
 
-test_that("q = 0 handled correctly", {
-            expect_equal(pmultinom(0, n, prob), 0)
-})
-
 test_that("q == 0 handled correctly", {
             expect_equal(pmultinom(0, n, prob), 0)
 })
