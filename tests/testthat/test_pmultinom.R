@@ -69,8 +69,7 @@ test_that("lower.tail == FALSE and q == n handled correctly", {
 
 test_that("Underflow handled correctly", {
             expect_equal(pmultinom(1e6, 1e6 + 1, prob = c(0.5, 0.5),
-                                   lower.tail = FALSE),
-                         "<2.2e-16")
+                                   lower.tail = FALSE), 0)
 })
 
 test_that("q = 0 and n = 0, handled correctly", {

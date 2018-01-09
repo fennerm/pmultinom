@@ -48,6 +48,7 @@ pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
   } else if (all(q >= n) && (!lower.tail)) {
     p <- 0
   } else if (all(q <= 0) && (n <= 0)) {
+    # This case causes the c++ program to crash unless caught
     p <- 0
   } else {
     p <- cdf_multinomial_lnP(K = length(prob), N = n, p = prob, n = q)
@@ -93,7 +94,7 @@ handle_overflow <- function(lower.tail) {
   if (lower.tail) {
     p <- 1
   } else {
-    p <- "<2.2e-16"
+    p <- 0
   }
   p
 }
