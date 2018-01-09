@@ -45,6 +45,8 @@ pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
   if (all(q > n)) {
     # If q >= n then xi <= q for all i
     p <- 0
+  } else if (all(q >= n) && (!lower.tail)) {
+    p <- 0
   } else {
     p <- cdf_multinomial_lnP(K = length(prob), N = n, p = prob, n = q)
 

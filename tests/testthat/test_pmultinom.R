@@ -58,12 +58,17 @@ test_that("q = 0 handled correctly", {
             expect_equal(pmultinom(0, n, prob), 0)
 })
 
-test_that("q > n handled correctly", {
+test_that("q == 0 handled correctly", {
             expect_equal(pmultinom(0, n, prob), 0)
 })
 
 test_that("q > n handled correctly", {
             expect_equal(pmultinom(n + 3, n, prob), 1)
+})
+
+test_that("lower.tail == FALSE and q == n handled correctly", {
+            expect_equal(pmultinom(c(1, 1), 1, c(0.5, 0.5), lower.tail = FALSE),
+                         0)
 })
 
 test_that("Underflow handled correctly", {
