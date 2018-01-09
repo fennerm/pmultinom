@@ -47,6 +47,8 @@ pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
     p <- 0
   } else if (all(q >= n) && (!lower.tail)) {
     p <- 0
+  } else if (all(q <= 0) && (n <= 0)) {
+    p <- 0
   } else {
     p <- cdf_multinomial_lnP(K = length(prob), N = n, p = prob, n = q)
 
