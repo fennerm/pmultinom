@@ -42,7 +42,7 @@ pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
     q <- rep(q, length(prob))
   }
 
-  if (any(q > n)) {
+  if (all(q > n)) {
     # If q >= n then xi <= q for all i
     p <- 0
   } else {
