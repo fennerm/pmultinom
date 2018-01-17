@@ -22,8 +22,8 @@ placed into bin xk}
 \item{log.p}{If TRUE, natural logarithm of probability is returned
 (Default: FALSE)}
 
-\item{lower.tail}{logical; if TRUE (default), probabilities are P[X <= x],
-otherwise, P[X > x].}
+\item{lower.tail}{logical; if TRUE, probabilities are P[X <= x],
+otherwise, P[X > x] (Default: TRUE)}
 }
 \value{
 Numeric; A probability value. Returns the string "<2.2e-16" for

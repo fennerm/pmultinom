@@ -18,7 +18,7 @@ system.
 
 Then from within R:
 
-``` 
+```
   install.packages('devtools')
   devtools::install_github('fennerm/pmultinom')
 ```
@@ -61,8 +61,11 @@ pmultinom exports a single function:
     prob: A vector of length k, describing the probability of a ball
           being placed into bin xk
 
-lower.tail: logical; if TRUE (default), probabilities are P[X <= x],
-          otherwise, P[X > x].
+    log.p: If TRUE, natural logarithm of probability is returned
+           (Default: FALSE)
+
+    lower.tail: logical; if TRUE, probabilities are P[X <= x],
+          otherwise, P[X > x] (Default: TRUE)
 ```
 
 ##### Examples
