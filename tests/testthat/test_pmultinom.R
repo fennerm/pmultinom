@@ -62,6 +62,12 @@ test_that("q > n handled correctly", {
             expect_equal(pmultinom(n + 3, n, prob), 1)
 })
 
+
+test_that("prob == 0 handled correctly", {
+            expect_equal(pmultinom(q, n, prob),
+                         pmultinom(c(q, 0), n, c(prob, 0)))
+})
+
 test_that("lower.tail == FALSE and q == n handled correctly", {
             expect_equal(pmultinom(c(1, 1), 1, c(0.5, 0.5), lower.tail = FALSE),
                          0)

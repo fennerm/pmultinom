@@ -51,6 +51,10 @@ pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
     # This case causes the c++ program to crash unless caught
     p <- 0
   } else {
+    nonzero_prob <- which(prob > 0)
+    prob <- prob[nonzero_prob]
+    q <- q[nonzero_prob]
+
     p <- cdf_multinomial_lnP(K = length(prob), N = n, p = prob, n = q)
 
     if (is.nan(p)) {
