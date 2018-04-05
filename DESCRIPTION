@@ -1,6 +1,7 @@
 Package: pmultinom
 Title: Multinomial cumulative distribution function
-Version: 1.0.0
+Version: 1.0.1
+Date: 2018-01-24
 Authors@R: person("Fenner", "Macrae", email = "fmacrae.dev@gmail.com", role = c("aut", "cre"))
 Description: Multinomial cumulative distribution function
 License: GPL-2

@@ -6,6 +6,12 @@
 \usage{
 calculate_exp_p(logp)
 }
+\arguments{
+\item{logp}{Log probability value}
+}
+\value{
+exp(log(p))
+}
 \description{
 Calculate exp(p) and handle any underflow errors
 }

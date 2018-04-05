@@ -6,6 +6,12 @@
 \usage{
 handle_overflow(lower.tail)
 }
+\arguments{
+\item{lower.tail}{bool; TRUE if p-value is lower tailed}
+}
+\value{
+0 if lower tailed, 1 otherwise.
+}
 \description{
 Return the correct p-value in the case of an overflow error
 }

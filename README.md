@@ -82,15 +82,15 @@ For 6 balls randomly thrown into 3 bins, probability that at least one bin ends
 up with 3 or more balls
 
 ```
-pmultinom(q = 2, n = 6, c(1/3, 1/3, 1/3))
-[1] 0.1142714833
+pmultinom(q = 2, n = 6, c(1/3, 1/3, 1/3), lower.tail = FALSE)
+[1] 0.8857285167
 ```
 
 Same as above, but with different probabilities for each bin
 
 ```
-pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5))
-[1] 0.0749668976`
+pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5), lower.tail = FALSE)
+[1] 0.9250331024
 ```
 
 ### Credit

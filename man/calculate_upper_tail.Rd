@@ -6,6 +6,12 @@
 \usage{
 calculate_upper_tail(plower)
 }
+\arguments{
+\item{plower}{float; The lower tail p-value}
+}
+\value{
+float; The upper tail p-value
+}
 \description{
 Convert the p-value for the lower tail to the upper tail p-value
 }

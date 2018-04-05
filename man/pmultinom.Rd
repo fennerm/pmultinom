@@ -49,11 +49,11 @@ pmultinom(q = 2, n = 4, prob = c(0.5, 0.5))
 pmultinom(q = 2, n = 6, c(1/3, 1/3, 1/3))
 
 # Same as above, but with different probabilities for each bin
-pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5))
+pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5), lower.tail = FALSE)
 
 # For 4 balls randomly thrown into 2 bins, probability that the first bin has
 # 0 balls and the second bin has 4
-pmultinom(q = c(0, 4), n = 4, c(0.5, 0.5))
+pmultinom(q = c(0, 4), n = 4, c(0.5, 0.5), lower.tail = FALSE)
 }
 \seealso{
 \code{\link{dmultinom}}, \code{\link{pbinom}}

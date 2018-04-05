@@ -30,11 +30,11 @@
 #' pmultinom(q = 2, n = 6, c(1/3, 1/3, 1/3))
 #'
 #' # Same as above, but with different probabilities for each bin
-#' pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5))
+#' pmultinom(q = 2, n = 6, c(0.2, 0.3, 0.5), lower.tail = FALSE)
 #'
 #' # For 4 balls randomly thrown into 2 bins, probability that the first bin has
 #' # 0 balls and the second bin has 4
-#' pmultinom(q = c(0, 4), n = 4, c(0.5, 0.5))
+#' pmultinom(q = c(0, 4), n = 4, c(0.5, 0.5), lower.tail = FALSE)
 #' @seealso \code{\link{dmultinom}}, \code{\link{pbinom}}
 #' @export
 pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
@@ -79,12 +79,16 @@ pmultinom <- function(q, n, prob, log.p = FALSE, lower.tail = TRUE) {
 }
 
 #' Convert the p-value for the lower tail to the upper tail p-value
+#' @param plower float; The lower tail p-value
+#' @return float; The upper tail p-value
 #' @importFrom VGAM log1mexp
 calculate_upper_tail <- function(plower) {
   log1mexp(-plower)
 }
 
 #' Calculate exp(p) and handle any underflow errors
+#' @param logp Log probability value
+#' @return exp(log(p))
 calculate_exp_p <- function(logp) {
     p <- exp(logp)
     if (p < 0) {
@@ -94,6 +98,8 @@ calculate_exp_p <- function(logp) {
 }
 
 #' Return the correct p-value in the case of an overflow error
+#' @param lower.tail bool; TRUE if p-value is lower tailed
+#' @return 0 if lower tailed, 1 otherwise.
 handle_overflow <- function(lower.tail) {
   if (lower.tail) {
     p <- 1
